@@ -18,6 +18,19 @@ app.listen(PORT, () => {
 });
 
 app.use(cors());
+
+app.use((req, res, next) => {
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    `${process.env.REACT_APP_CLIENT_KEY}`
+  );
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
 app.use(express.json());
 
 app.use("/warehouses", warehouseRouter);
