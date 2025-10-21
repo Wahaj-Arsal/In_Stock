@@ -22,7 +22,7 @@ const List = ({ title, itemType, apiUrl, url, path }) => {
 
   useEffect(() => {
     axios
-      .get(`${SERVER_URL}/warehouse`)
+      .get(`${SERVER_URL}/warehouses`)
       .then((res) => setData(res.data))
       .catch(() => {
         console.log("Trouble connecting with the server");
