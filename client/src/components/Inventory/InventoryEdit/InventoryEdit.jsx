@@ -8,10 +8,8 @@ import axios from "axios";
 const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 const SERVER_PORT = process.env.REACT_APP_SERVER_PORT;
 
-const API_URL_GET_INVENTORY = (id) =>
-  `${SERVER_URL}:${SERVER_PORT}/inventories/${id}`;
-const API_URL_EDIT_INVENTORY = (id) =>
-  `${SERVER_URL}:${SERVER_PORT}/inventories/${id}/edit`;
+const API_URL_GET_INVENTORY = (id) => `${SERVER_URL}/inventories/${id}`;
+const API_URL_EDIT_INVENTORY = (id) => `${SERVER_URL}/inventories/${id}/edit`;
 
 export default class AddNewInventoryItem extends Component {
   constructor(props) {
@@ -47,14 +45,14 @@ export default class AddNewInventoryItem extends Component {
 
   getData = async () => {
     const currentId = this.props.match.params.inventoryId;
-    console.log(currentId);
+    // console.log(currentId);
     const response = await axios.get(API_URL_GET_INVENTORY(currentId));
-    console.log(response);
+    // console.log(response);
     const inventoryInfo = response.data;
-    console.log(inventoryInfo.status);
+    // console.log(inventoryInfo.status);
 
     if (this.state.status == "In Stock") {
-      console.log("Here");
+      // console.log("Here");
       this.setState({ status: "1" });
       document.getElementById("inStock").checked = true;
       //   return;
@@ -62,7 +60,7 @@ export default class AddNewInventoryItem extends Component {
     if (this.state.status !== "In Stock") {
       this.setState({ status: "0" });
       document.getElementById("outOfStock").checked = true;
-      console.log("Second Here");
+      // console.log("Second Here");
       //   return;
       //   document.getElementById("outOfStock").checked = true;
     }
@@ -82,7 +80,7 @@ export default class AddNewInventoryItem extends Component {
         [e.target.name]: e.target.value,
       },
       () => {
-        console.log(this.state.status);
+        // console.log(this.state.status);
         if (this.state.status == "0") {
           this.setState({ inStockValid: true });
           document.getElementById("quantity").classList.add("quantity--hidden");
@@ -161,7 +159,7 @@ export default class AddNewInventoryItem extends Component {
   };
 
   quantityValidation = () => {
-    console.log("Quantity", this.state.status);
+    // console.log("Quantity", this.state.status);
     if (this.state.status == "0") {
       this.setState({ quantityValid: true });
       return true;
@@ -208,7 +206,7 @@ export default class AddNewInventoryItem extends Component {
     if (!this.warehouseValidation()) {
       return false;
     }
-    console.log("Validated");
+    // console.log("Validated");
     return true;
   };
 

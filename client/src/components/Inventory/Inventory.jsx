@@ -14,7 +14,7 @@ import ListDataInventory from "../Utilities/List/ListDataInventory/ListDataInven
 
 const Inventory = (routerProps) => {
   const url = routerProps.match.url;
-  console.log(url);
+  // console.log(url);
   return (
     <>
       <List

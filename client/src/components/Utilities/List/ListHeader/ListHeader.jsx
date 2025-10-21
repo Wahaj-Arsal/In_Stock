@@ -9,7 +9,7 @@ import "./ListHeader.scss";
 import Searchbar from "../../Searchbar/Searchbar";
 
 const ListHeader = ({ title, itemType, url }) => {
-  console.log(url);
+  // console.log(url);
   return (
     <>
       <div className="header-container">

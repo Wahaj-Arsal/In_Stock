@@ -18,8 +18,8 @@ const SERVER_PORT = process.env.REACT_APP_SERVER_PORT;
 const Warehouse = (routerProps) => {
   const url = routerProps.match.url;
   //   const url = urlRouter + "/warehouse";
-  console.log(SERVER_URL);
-  console.log(SERVER_PORT);
+  // console.log(SERVER_URL);
+  // console.log(SERVER_PORT);
   return (
     <>
       {/* <Switch>

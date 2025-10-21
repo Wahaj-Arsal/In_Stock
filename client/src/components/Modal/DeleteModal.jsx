@@ -11,12 +11,12 @@ const SERVER_PORT = process.env.REACT_APP_SERVER_PORT;
 export default function DeleteModal({ cardType, data, show, onClose, url }) {
   const handleDeleteWarehouse = () => {
     axios
-      .delete(`${SERVER_URL}:${SERVER_PORT}/${data.id}`)
+      .delete(`${SERVER_URL}/${data.id}`)
       .then(console.log("delete successfull") && onClose);
   };
   const handleDeleteInventoryItem = () => {
     axios
-      .delete(`${SERVER_URL}:${SERVER_PORT}/${data.warehouseID}`)
+      .delete(`${SERVER_URL}/${data.warehouseID}`)
       .then(console.log("delete successfull") && onClose);
   };
   if (!show) {

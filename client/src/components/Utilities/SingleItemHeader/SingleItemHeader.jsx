@@ -19,7 +19,7 @@ const SingleItemHeader = ({ data, path, url }) => {
     newPath = "/inventory";
   }
 
-  console.log(path);
+  // console.log(path);
 
   if (data) {
     const title = data.name || data.itemName;

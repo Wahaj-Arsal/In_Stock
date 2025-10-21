@@ -9,7 +9,7 @@ import axios from "axios";
 const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 const SERVER_PORT = process.env.REACT_APP_SERVER_PORT;
 
-const API_URL_NEW_INVENTORY = `${SERVER_URL}:${SERVER_PORT}/inventory/add`;
+const API_URL_NEW_INVENTORY = `${SERVER_URL}/inventory/add`;
 
 export default class AddNewInventoryItem extends Component {
   constructor(props) {
@@ -44,7 +44,7 @@ export default class AddNewInventoryItem extends Component {
         [e.target.name]: e.target.value,
       },
       () => {
-        console.log(this.state.status);
+        // console.log(this.state.status);
         if (this.state.status == "0") {
           this.setState({ inStockValid: true });
           document.getElementById("quantity").classList.add("quantity--hidden");
@@ -169,7 +169,7 @@ export default class AddNewInventoryItem extends Component {
     if (!this.warehouseValidation()) {
       return false;
     }
-    console.log("Validated");
+    // console.log("Validated");
     return true;
   };
 

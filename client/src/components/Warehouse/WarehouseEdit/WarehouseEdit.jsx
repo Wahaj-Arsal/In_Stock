@@ -9,9 +9,8 @@ import axios from "axios";
 const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 const SERVER_PORT = process.env.REACT_APP_SERVER_PORT;
 
-const API_URL_EDIT_WAREHOUSE = (id) =>
-  `${SERVER_URL}:${SERVER_PORT}/warehouses/${id}/edit`;
-const API_URL_GET_WAREHOUSES = (id) => `${SERVER_URL}:${SERVER_PORT}/${id}`;
+const API_URL_EDIT_WAREHOUSE = (id) => `${SERVER_URL}/warehouses/${id}/edit`;
+const API_URL_GET_WAREHOUSES = (id) => `${SERVER_URL}/${id}`;
 
 export default class WarehouseEdit extends Component {
   constructor(props) {
@@ -137,11 +136,11 @@ export default class WarehouseEdit extends Component {
     //Contact Name
     // console.log(this.state.contact.name.length);
     if (this.state.contact.name.length > 0) {
-      console.log(this.state.contact.name.length);
+      // console.log(this.state.contact.name.length);
       this.setState({ nameValid: true });
       return true;
     } else {
-      console.log(this.state.contact.name);
+      // console.log(this.state.contact.name);
       this.setState({ nameValid: false });
       return false;
     }
@@ -213,7 +212,7 @@ export default class WarehouseEdit extends Component {
     if (!this.emailValidation()) {
       return false;
     }
-    console.log("Validated");
+    // console.log("Validated");
     return true;
   };
 
