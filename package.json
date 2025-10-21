@@ -4,7 +4,8 @@
   "description": "back-end for instock project",
   "main": "server.js",
   "scripts": {
-    "start": "npx nodemon server.js"
+    "start": "npx nodemon server.js",
+    "build": "npx nodemon server.js"
   },
   "author": "",
   "license": "ISC",
