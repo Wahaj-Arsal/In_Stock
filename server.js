@@ -14,7 +14,7 @@ const warehouseRouter = require("./routes/warehouses");
 const inventoryRouter = require("./routes/inventories");
 
 app.listen(PORT, () => {
-  // console.log(`App is listening on port ${PORT}`);
+  console.log(`App is listening on port ${PORT}`);
 });
 
 app.use(cors());
