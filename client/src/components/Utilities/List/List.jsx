@@ -15,12 +15,14 @@ import ListWarehouseColumns from "./ListWarehouseColumns/ListWarehouseColumns";
 import ListInventoryColumns from "./ListInventoryColumns/ListInventoryColumns";
 import WarehouseCard from "./WarehouseCard/WarehouseCard";
 
+const SERVER_URL = process.env.REACT_APP_SERVER_URL;
+
 const List = ({ title, itemType, apiUrl, url, path }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     axios
-      .get(apiUrl)
+      .get(`${SERVER_URL}/warehouse`)
       .then((res) => setData(res.data))
       .catch(() => {
         console.log("Trouble connecting with the server");
