@@ -1,0 +1,21 @@
+@use "../../../styles/partials/breakpoints" as *;
+@use "../../../styles/partials/design-spec" as *;
+@use "../../../styles/partials/design-colours" as *;
+@use "../../../styles/partials/resets" as *;
+
+.list {
+	&__error {
+		padding: 32px;
+		background-color: $supporting__outofstock;
+		color: $primary__white;
+	}
+}
+
+@include tablet {
+	.list {
+		&__error {
+			margin: 32px 0;
+			padding: 32px 64px;
+		}
+	}
+}

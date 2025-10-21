@@ -1,0 +1,74 @@
+/** @format */
+
+@use "../../../styles/partials/breakpoints" as *;
+@use "../../../styles/partials/design-spec" as *;
+@use "../../../styles/partials/design-colours" as *;
+@use "../../../styles/partials/resets" as *;
+
+.searchbar {
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	border: solid 1px $secondary__outlines;
+	border-radius: 20px;
+	background-color: $primary__white;
+	margin-bottom: 16px;
+
+	&:active {
+		border-color: $primary__interactive;
+	}
+
+	// This is just for screen readers
+	&__label {
+		visibility: none;
+	}
+
+	// Search icon
+	&__button {
+		border: none;
+		margin: 0 9px 0 0;
+		width: 18px;
+		height: 18px;
+		flex-shrink: 0;
+		flex-grow: 0;
+		background-image: url("../../../assets//icons/search-24px.svg");
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-color: $primary__white;
+	}
+
+	&__input {
+		outline: none;
+		width: 100%;
+		padding: 12px 0;
+		border: none;
+		margin-left: 16px;
+		background-color: $primary__white;
+		color: $secondary__header-placeholder;
+		font-size: 13px;
+
+		&:active {
+			border-color: none;
+		}
+
+		&::placeholder {
+			color: $secondary__header-placeholder;
+		}
+	}
+
+	@include tablet {
+		width: 185px;
+		height: 40px;
+		margin: 0 16px 0 0;
+
+		&__input {
+			padding: 8px 0;
+		}
+	}
+
+	@include desktop {
+		@include tablet;
+		width: 274px;
+	}
+}

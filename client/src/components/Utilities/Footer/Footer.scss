@@ -1,0 +1,51 @@
+/* Styling for the footer component
+Add by wrapping content in an element with class footer */
+
+@use "../../../styles/partials/breakpoints" as *;
+@use "../../../styles/partials/design-spec" as *;
+@use "../../../styles/partials/design-colours" as *;
+@use "../../../styles/partials/resets" as *;
+
+.footer {
+	height: 100%;
+	width: 100%;
+	padding: 0 16px;
+	background-color: $background__page-table-CTA;
+	// z-index: -10;
+
+	> * {
+		position: relative;
+		top: -60px;
+	}
+
+	&__text {
+		padding: 40px 0;
+		text-align: center;
+		color: $secondary__header-placeholder;
+		@extend .design-spec__body-small;
+	}
+}
+
+@include tablet {
+	.footer {
+		padding: 0 32px;
+
+		> * {
+			top: -94px;
+		}
+
+		&__text {
+			padding-top: 70px;
+		}
+	}
+}
+@include desktop {
+	.footer {
+		padding: 35px 0 70px 0;
+		margin: 0 auto;
+
+		> * {
+			top: -128px;
+		}
+	}
+}

@@ -1,0 +1,68 @@
+@use "../../../../styles/partials/breakpoints" as *;
+@use "../../../../styles/partials/design-spec" as *;
+@use "../../../../styles/partials/design-colours" as *;
+@use "../../../../styles/partials/resets" as *;
+
+.header-container {
+	@include header-container;
+
+	@include desktop {
+		height: 94px;
+	}
+}
+
+.list {
+	&__header {
+		display: flex;
+		flex-direction: column;
+
+		a {
+			text-decoration: none;
+		}
+
+		&-actions {
+			display: flex;
+			flex-direction: column;
+		}
+
+		@include tablet {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+
+			&-actions {
+				width: 60%;
+				flex-direction: row;
+				justify-content: flex-end;
+				flex-shrink: 0;
+				align-items: center;
+			}
+		}
+	}
+	&__title {
+		@include header-title;
+	}
+	&__add-button {
+		flex-shrink: 0;
+		width: 100%;
+		padding: 12px 0;
+		border: none;
+		border-radius: 20px;
+		margin-bottom: 8px;
+		background-color: $primary__interactive;
+		color: $primary__white;
+		font-size: 13px;
+		text-align: center;
+
+		@include tablet {
+			flex-shrink: 1;
+			display: inline-flex;
+			flex-direction: column;
+			justify-content: center;
+			max-width: 168px;
+			height: 40px;
+			padding: 8px 16px;
+			margin: 0;
+		}
+	}
+}

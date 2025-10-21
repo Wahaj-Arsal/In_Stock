@@ -1,0 +1,240 @@
+/** @format */
+
+@use "./fonts" as *;
+@use "./breakpoints" as *;
+@use "./design-colours" as *;
+
+/*Mixin allows for name, size, and line height to be adjusted to design spec and mockups.*/
+@mixin textstyle($font-weight, $text-size, $line-height) {
+	font-family: Titillium Web, 'serif';
+	font-weight: $font-weight;
+	font-size: $text-size;
+	line-height: $line-height;
+}
+
+// White background and responsive padding for all headers
+@mixin header-container {
+	@extend .design-spec__card-top;
+	padding: 16px 24px;
+	background-color: $primary__white;
+	z-index: -10;
+
+	@include tablet {
+		padding-left: 32px;
+		padding-right: 32px;
+	}
+	@include desktop {
+		padding: 16px 40px;
+		margin: 0 auto;
+		max-width: 1020px;
+	}
+}
+
+@mixin header-title {
+	justify-self: flex-start;
+	padding: 16px 0;
+	@include tablet {
+		padding-bottom: 8px;
+	}
+	@extend .design-spec__page-header;
+}
+
+//use these extensions to get the specified design-spec template. Then after you can adjust depending on any exceptions in the mock-ups.
+.design-spec {
+	&__page-header {
+		@include textstyle(600, 1.75rem, 2.25rem);
+		@include tablet {
+			@include textstyle(600, 2rem, 2.5rem);
+		}
+		@include desktop {
+			@include textstyle(600, 2rem, 2.5rem);
+		}
+	}
+	&__subheader {
+		@include textstyle(600, 1.25rem, 1.75rem);
+		@include tablet {
+			@include textstyle(600, 1.5rem, 2rem);
+		}
+		@include desktop {
+			@include textstyle(600, 1.5rem, 2rem);
+		}
+	}
+	&__label {
+		@include textstyle(400, 0.8125rem, 1.25rem);
+		@include tablet {
+			@include textstyle(400, 0.875rem, 1.5rem);
+		}
+		@include desktop {
+			@include textstyle(400, 0.875rem, 1.5rem);
+		}
+	}
+	&__button {
+		@include textstyle(600, 0.8125rem, 1.25rem);
+		border-radius: 4rem;
+		color: $secondary__outlines;
+		background-color: $background__header-hover;
+		border: none;
+		text-transform: capitalize;
+		padding: 0.2rem 3rem;
+		@include tablet {
+			@include textstyle(600, 0.875rem, 1.5rem);
+		}
+		@include desktop {
+			@include textstyle(600, 0.875rem, 1.5rem);
+		}
+		&:hover {
+			background-color: $primary__text;
+			color: $background__page-table-CTA;
+			border: 1px solid $primary__interactive;
+		}
+		&-active {
+			background-color: $primary__text;
+			color: $background__page-table-CTA;
+		}
+	}
+	&__link {
+		@include textstyle(400, 0.8125rem, 1.25rem);
+		@include tablet {
+			@include textstyle(400, 0.875rem, 1.5rem);
+		}
+		@include desktop {
+			@include textstyle(400, 0.875rem, 1.5rem);
+		}
+	}
+	&__table-header {
+		text-transform: uppercase;
+		color: $secondary__header-placeholder;
+		@include textstyle(400, 0.687rem, 1rem);
+		@include tablet {
+			@include textstyle(400, 0.75rem, 1.25rem);
+		}
+		@include desktop {
+			@include textstyle(400, 0.75rem, 1.25rem);
+		}
+	}
+	&__body-large {
+		@include textstyle(400, 0.9375rem, 1.625rem);
+		@include tablet {
+			@include textstyle(400, 1rem, 1.75rem);
+		}
+		@include desktop {
+			@include textstyle(400, 1rem, 1.75rem);
+		}
+	}
+	&__body-medium {
+		@include textstyle(400, 0.8125rem, 1.25rem);
+		@include tablet {
+			@include textstyle(400, 0.875rem, 1.375rem);
+		}
+		@include desktop {
+			@include textstyle(400, 0.875rem, 1.375rem);
+		}
+	}
+	&__body-small {
+		@include textstyle(400, 0.75rem, 1.5rem);
+		@include tablet {
+			@include textstyle(400, 0.6875rem, 1rem);
+		}
+		@include desktop {
+			@include textstyle(400, 0.6875rem, 1rem);
+		}
+	}
+	&__card-top {
+		box-shadow: 0 2px 5px rgba(19, 24, 44, 0.1);
+		border-radius: 3px 3px 0 0;
+	}
+	&__card-middle {
+		box-shadow: 0 0 5px rgba(19, 24, 44, 0.1);
+		border-radius: 0;
+	}
+	&__card-bottom {
+		@extend .design-spec__card-top;
+		border-radius: 0 0 3px 3px;
+	}
+}
+
+@mixin m-page-header {
+  font-weight: 600;
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+}
+
+@mixin d-t-page-header {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+@mixin m-sub-header {
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+@mixin d-t-sub-header {
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+@mixin m-page-label-link-button {
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+
+@mixin d-t-page-label-link-button {
+  font-weight: 600;
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+}
+
+@mixin m-table-header {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 0.6875rem;
+  line-height: 1rem;
+}
+
+@mixin d-t-table-header {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+}
+
+@mixin m-body-large {
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.625rem;
+}
+
+@mixin d-t-body-large {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.75rem;
+}
+
+@mixin m-body-medium {
+  font-weight: 400;
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+}
+
+@mixin d-t-body-medium {
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+
+@mixin m-body-small {
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+}
+
+@mixin d-t-body-small {
+  font-weight: 400;
+  font-size: 0.6875rem;
+  line-height: 1rem;
+}

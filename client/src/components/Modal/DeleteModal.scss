@@ -1,0 +1,90 @@
+@use "../../styles/partials/design-colours" as *;
+@use "../../styles/partials/design-spec" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/fonts" as *;
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.625);
+  display: flex;
+  justify-content: center;
+  @include tablet {
+  }
+  &__section {
+    @include tablet {
+      position: fixed;
+      top: 26%;
+    }
+  }
+  &__container {
+    width: 42rem;
+    height: 100%;
+    background-color: $primary__white;
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      height: 16.375rem;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem 1rem;
+    @include tablet {
+      padding: 1rem 5rem;
+    }
+  }
+  &__information {
+    @include tablet {
+      padding-bottom: 2.5rem;
+    }
+  }
+  &__title {
+    font-size: 2.25rem;
+    line-height: 2.25rem;
+    padding-bottom: 1rem;
+  }
+  &__confirmation {
+    font-size: 0.9375rem;
+    line-height: 1.625rem;
+    padding-bottom: 25rem;
+    @include tablet {
+      padding: 0;
+    }
+  }
+  &__buttons {
+    align-self: center;
+    @include tablet {
+      align-self: flex-end;
+    }
+  }
+  &__button {
+    @extend .design-spec__button;
+    width: 10rem;
+    height: 2.25rem;
+    border-radius: 1.25rem;
+    border: 1px solid $secondary__outlines;
+    background-color: $primary__white;
+    color: $background__header-hover;
+    font-family: Titillium Web, serif;
+    @include tablet {
+      width: 4.5rem;
+      padding: 0;
+    }
+  }
+  &__button--delete {
+    background-color: $supporting__outofstock;
+    color: $primary__white;
+  }
+  &__button--close {
+    height: 2rem;
+    background-color: $primary__white;
+    border: none;
+    padding: 1rem;
+    align-self: flex-end;
+  }
+}

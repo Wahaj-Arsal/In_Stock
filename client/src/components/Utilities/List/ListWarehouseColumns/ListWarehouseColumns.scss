@@ -1,0 +1,50 @@
+/** @format */
+
+@use "../../../../styles/partials/breakpoints" as *;
+@use "../../../../styles/partials/fonts" as *;
+@use "../../../../styles/partials/design-spec" as *;
+@use "../../../../styles/partials/design-colours" as *;
+@use "../../../../styles/partials/resets" as *;
+@use "../ListCard/ListCard.scss" as *;
+
+.card {
+	&__columns-wrapper {
+		@extend .design-spec__card-middle;
+		background-color: $background__page-table-CTA;
+		display: none;
+		padding: 0 16px;
+
+		@include tablet {
+			display: flex;
+			height: 40px;
+			padding: 0 32px;
+			align-items: center;
+			position: sticky;
+			top: 0;
+		}
+
+		@include desktop {
+			padding: 16px 40px;
+			margin: 0 auto;
+			max-width: 1020px;
+		}
+	}
+	&__columns-warehouse {
+		display: flex;
+		flex-grow: 1;
+	}
+
+	&__col-content {
+		display: flex;
+		align-items: center;
+	}
+
+	&__col-label {
+		@extend .design-spec__table-header;
+	}
+
+	&__col-sort-arrows {
+		height: 16px;
+		padding-left: 3px;
+	}
+}

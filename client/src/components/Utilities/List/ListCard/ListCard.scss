@@ -1,0 +1,242 @@
+/** @format */
+
+@use "../../../../styles/partials/breakpoints" as *;
+@use "../../../../styles/partials/fonts" as *;
+@use "../../../../styles/partials/design-spec" as *;
+@use "../../../../styles/partials/design-colours" as *;
+@use "../../../../styles/partials/resets" as *;
+
+@mixin card-container {
+	@extend .design-spec__card-middle;
+	padding: 16px;
+	border-top: solid 1px $secondary__outlines;
+	background-color: $primary__white;
+	z-index: -10;
+
+	@include tablet {
+		padding: 16px 32px;
+	}
+	@include desktop {
+		padding: 16px 40px;
+		margin: 0 auto;
+		max-width: 1020px;
+	}
+}
+
+@mixin card-container-small {
+	@include card-container();
+	padding: 16px;
+
+	@include tablet {
+		padding: 16px;
+	}
+	@include desktop {
+		padding: 29px 40px;
+		margin: 0 auto;
+		max-width: 1020px;
+	}
+}
+
+.card {
+	@include card-container;
+
+	// For inventories cards
+	&__small {
+		@include card-container;
+		padding: 16px;
+	}
+
+	&__one {
+		border: none;
+	}
+
+	&__content-wrapper {
+		display: flex;
+	}
+	&__content-piece {
+		padding-right: 20px;
+		padding-bottom: 16px;
+
+		a {
+			@extend .design-spec__link;
+			color: $primary__interactive;
+			font-weight: bold;
+			text-decoration: none;
+
+			:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	&__col-one,
+	&__col-two {
+		width: 50%;
+	}
+
+	&__info-wrapper {
+		display: flex;
+		padding: 16px 0;
+	}
+	&__arrow {
+		transition: transform 0.5s;
+	}
+	&:hover .card__arrow{
+		transform: translateX(4px);
+	}
+	&__label {
+		@extend .design-spec__table-header;
+	}
+	&__info {
+		@extend .design-spec__body-medium;
+
+		:hover {
+			cursor: pointer;
+		}
+	}
+	&__status {
+		@extend .design-spec__table-header;
+		font-weight: 600;
+		border-radius: 20px;
+		padding: 4px 8px;
+		width: fit-content;
+
+		&--in-stock {
+			background: rgba(21, 132, 99, 0.07);
+			color: rgba(21, 132, 99, 1);
+		}
+
+		&--out-of-stock {
+			background: rgba(201, 69, 21, 0.07);
+			color: rgba(201, 69, 21, 1);
+		}
+	}
+	&__actions {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: 3px 0;
+
+		a {
+			img {
+				padding: 6px 0 0 12px;
+			}
+		}
+
+		&-label {
+			width: 64px;
+			text-align: end;
+		}
+	}
+}
+
+.inventory-label {
+	&-1 {
+		padding-bottom: 0;
+		flex-basis: 33%;
+
+		a {
+			> * {
+				padding-top: 0;
+			}
+		}
+	}
+	&-2 {
+		flex-basis: 33%;
+	}
+}
+
+@include tablet {
+	.card {
+		display: flex;
+		align-items: center;
+		height: 98px;
+
+		&__small {
+			height: 58px;
+		}
+
+		&__content-wrapper {
+			display: flex;
+			flex-grow: 1;
+		}
+		&__content-piece {
+			padding: 0;
+		}
+		&__col-one {
+			width: 45%;
+			display: flex;
+			align-items: center;
+		}
+		&__col-two {
+			width: 55%;
+			display: flex;
+			align-items: center;
+		}
+		&__col-one-warehouse-card {
+			width: 66%;
+			display: flex;
+			justify-content: space-between;
+		}
+		&__col-two-warehouse-card {
+			padding-left: 40px;
+			flex-grow: 1;
+			display: flex;
+		}
+
+		&__label {
+			display: none;
+		}
+		&__actions {
+			justify-self: flex-end;
+
+			:nth-of-type(2) {
+				margin-left: 16px;
+			}
+		}
+
+		&:hover {
+			cursor: pointer;
+			background-color: rgba(46, 102, 229, 0.07);
+		}
+	}
+
+	.warehouse-label {
+		&-1 {
+			flex-basis: 50%;
+		}
+		&-2 {
+			flex-basis: 40%;
+		}
+		&-3 {
+			flex-basis: 42%;
+		}
+		&-4 {
+			flex-basis: 54%;
+		}
+	}
+
+	.inventory-label {
+		&-1 {
+			flex-basis: 58%;
+			padding: 16px 0;
+
+			a {
+				> * {
+					padding: 16px 0;
+				}
+			}
+		}
+		&-2 {
+			flex-basis: 45%;
+		}
+		&-3 {
+			flex-basis: 40%;
+		}
+		&-4 {
+			flex-basis: 20%;
+		}
+		&-5 {
+			flex-basis: 40%;
+		}
+	}
+}

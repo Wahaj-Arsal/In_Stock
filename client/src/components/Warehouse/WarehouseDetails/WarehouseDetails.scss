@@ -1,0 +1,180 @@
+// @use "../../../styles/partials/breakpoints" as *;
+// @use "../../../styles/partials/design-spec" as *;
+// @use "../../../styles/partials/design-colours" as *;
+// @use "../../../styles/partials/resets" as *;
+
+// p {
+// 	font-size: 13px;
+// }
+// .help {
+// 	display: flex;
+// 	justify-content: center;
+// 	position: relative;
+// }
+// .warehouse {
+// 	position: absolute;
+// 	top: -5rem;
+// 	color: $primary__text;
+// 	background: $primary__white;
+// 	box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+// 	border-radius: 3px;
+// 	width: 91.5%;
+// 	@include desktop {
+// 		margin: 0 8.125rem;
+// 	}
+// 	&__title {
+// 		font-size: 2.25rem;
+// 		padding: 0 1rem;
+// 	}
+// 	&__header {
+// 		display: flex;
+// 		border-bottom: 1px solid $secondary__outlines;
+// 		@extend .design-spec__subheader;
+// 		padding: 2.25rem 1.5rem 1.75rem 1.5rem;
+// 		justify-content: space-between;
+// 		@include tablet {
+// 			margin: 0;
+// 		}
+// 	}
+// 	&__header-container {
+// 		display: flex;
+// 		justify-content: space-between;
+// 		align-items: baseline;
+// 	}
+// 	&__button {
+// 		display: flex;
+// 		align-content: baseline;
+// 	}
+// }
+
+// .details {
+// 	border-bottom: 1px solid $secondary__outlines;
+// 	@include tablet {
+// 		display: flex;
+// 		justify-content: space-between;
+// 	}
+// 	&__address {
+// 		padding: 1rem 1.5rem;
+// 	}
+// 	&__container {
+// 		display: flex;
+// 	}
+// 	&__title {
+// 		color: $secondary__header-placeholder;
+// 		font-size: 11px;
+// 		padding: 0.5rem 0;
+// 	}
+// 	&__contact {
+// 		display: flex;
+// 		justify-content: space-between;
+// 		padding: 1rem 1.5rem;
+// 	}
+// 	&__contact-info {
+// 		@include tablet {
+// 			padding: 0 1rem;
+// 		}
+// 	}
+// }
+// .edit-button {
+// 	background-color: $primary__interactive;
+// 	border-radius: 50%;
+// 	border: none;
+// 	height: 2.25rem;
+// 	width: 2.25rem;
+// 	// background-image: url("../../../assets/icons/edit-white-24px.svg");
+// 	background-repeat: no-repeat;
+// 	background-position: 50%;
+// 	background-size: 1rem;
+// 	@include tablet {
+// 		display: none;
+// 	}
+// }
+// .edit-button--tablet {
+// 	display: none;
+// 	width: 5rem;
+// 	height: 2.375rem;
+// 	border-radius: 5rem;
+// 	background-position: 25%;
+// 	@include tablet {
+// 		display: flex;
+// 		align-content: baseline;
+// 		justify-content: center;
+// 		padding: 0.75rem 0 0 1rem;
+// 		color: $primary__white;
+// 	}
+// }
+
+// .inventory {
+// 	&__main {
+// 		display: flex;
+// 		flex-direction: column;
+// 		border-bottom: 1px solid $secondary__outlines;
+// 		@include tablet {
+// 			flex-direction: row;
+// 		}
+// 	}
+// 	&__container {
+// 		display: flex;
+// 		gap: 4.5rem;
+// 		padding: 0 1.5rem;
+// 		@include tablet {
+// 			gap: 0;
+// 		}
+// 	}
+// 	&__box {
+// 		display: flex;
+// 		flex-direction: column;
+// 		@include tablet {
+// 			flex-direction: row;
+// 		}
+// 	}
+
+// 	&__storage {
+// 		display: flex;
+// 		flex-direction: column;
+// 		@include tablet {
+// 			flex-direction: row;
+// 		}
+// 	}
+// 	&__item {
+// 		padding: 1rem 0;
+// 		@include tablet {
+// 			padding: 0;
+// 		}
+// 	}
+// 	&__title--mobile {
+// 		@include tablet {
+// 			display: none;
+// 		}
+// 	}
+// 	&__title--mobile {
+// 		@include tablet {
+// 			display: flex;
+// 		}
+// 	}
+// 	&__title--tablet {
+// 		display: none;
+// 		@include tablet {
+// 			display: none;
+// 		}
+// 	}
+// 	&__button {
+// 		display: flex;
+// 		align-items: center;
+// 	}
+// 	&__buttons {
+// 		display: flex;
+// 		justify-content: space-between;
+// 		padding: 1rem 1.5rem;
+// 		@include tablet {
+// 			padding: 0;
+// 		}
+// 	}
+// }
+// .button-icon {
+// 	background-color: $primary__white;
+// 	border: none;
+// 	padding: 0;
+// 	height: 1.125rem;
+// 	width: 1.125rem;
+// }

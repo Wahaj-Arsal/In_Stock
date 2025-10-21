@@ -1,0 +1,75 @@
+@use "../../../styles/partials/breakpoints" as *;
+@use "../../../styles/partials/design-spec" as *;
+@use "../../../styles/partials/design-colours" as *;
+@use "../../../styles/partials/fonts" as *;
+@use "../../../styles/partials/resets" as *;
+@use "../../Utilities/List/ListCard/ListCard.scss" as *;
+
+.button__disappearing-text {
+	@include small {
+		display: none;
+	}
+}
+
+.inventory-item {
+	@include card-container;
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+	&__container-1 {
+		height: 50%;
+		display: flex;
+		flex-direction: column;
+	}
+	&__container-2 {
+		height: 50%;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+	&__label {
+		@extend .design-spec__table-header;
+	}
+
+	&__label-3 {
+		width: 50%;
+	}
+	&__label-4 {
+		width: 50%;
+	}
+	&__label-5 {
+		width: 100%;
+	}
+	&__divider {
+		display: none;
+	}
+
+	@include tablet {
+		display: flex;
+		align-items: center;
+		padding-top: 32px;
+		padding-bottom: 32px;
+
+		&__wrapper {
+			flex-direction: row;
+			flex-grow: 1;
+		}
+		&__container-1 {
+			width: 50%;
+		}
+		&__container-2 {
+			width: 50%;
+		}
+		&__label-2,
+		&__label-5 {
+			padding: 16px 0;
+		}
+		&__divider {
+			display: block;
+			border: solid 0.5px $secondary__outlines;
+			margin: 0 40px;
+		}
+	}
+}

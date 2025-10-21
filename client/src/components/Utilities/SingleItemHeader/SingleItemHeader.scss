@@ -1,0 +1,54 @@
+/** @format */
+
+/** @format */
+
+@use "../../../styles/partials/breakpoints" as *;
+@use "../../../styles/partials/design-spec" as *;
+@use "../../../styles/partials/design-colours" as *;
+@use "../../../styles/partials/fonts" as *;
+@use "../../../styles/partials/resets" as *;
+
+.item-header {
+	background-color: $primary__white;
+	display: flex;
+	flex-shrink: 0;
+	width: 100%;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 1.5rem;
+	height: 92px;
+	@include tablet {
+		padding: 2rem 2.5rem 1.313rem 2.5rem;
+	}
+	@include desktop {
+		padding: 2rem 2.5rem;
+	}
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		&:hover .item-header__icon{
+			transform: translateX(-4px);
+		}
+	}
+	&__icon {
+		background-color: $primary__white;
+		border: none;
+		padding: 0;
+		height: 1.5rem;
+		width: 1.5rem;
+		transition: transform 0.5s;
+	}
+	&__edit-icon {
+		justify-self: flex-end;
+		color: white;
+		background-color: primary__interactive;
+	}
+	&__title {
+		@extend .design-spec__page-header;
+		padding: 0 0 0 0.5rem;
+		@include tablet {
+			padding: 0 0 0 0.5rem;
+		}
+	}
+}
