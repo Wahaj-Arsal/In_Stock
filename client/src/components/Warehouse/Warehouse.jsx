@@ -12,10 +12,14 @@ import { GET_WAREHOUSES_API_URL } from "../../api/endpoints";
 // import Header from "../Header/Header";
 import List from "../Utilities/List/List";
 
+const SERVER_URL = process.env.REACT_APP_SERVER_URL;
+const SERVER_PORT = process.env.REACT_APP_SERVER_PORT;
+
 const Warehouse = (routerProps) => {
   const url = routerProps.match.url;
   //   const url = urlRouter + "/warehouse";
-  console.log(url);
+  console.log(SERVER_URL);
+  console.log(SERVER_PORT);
   return (
     <>
       {/* <Switch>

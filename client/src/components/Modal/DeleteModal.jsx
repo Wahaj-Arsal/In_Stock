@@ -5,15 +5,18 @@ import React from "react";
 import CloseIcon from "../../assets/icons/close-24px.svg";
 import "./DeleteModal.scss";
 
+const SERVER_URL = process.env.REACT_APP_SERVER_URL;
+const SERVER_PORT = process.env.REACT_APP_SERVER_PORT;
+
 export default function DeleteModal({ cardType, data, show, onClose, url }) {
   const handleDeleteWarehouse = () => {
     axios
-      .delete(`http://localhost:5000/${data.id}`)
+      .delete(`${SERVER_URL}:${SERVER_PORT}/${data.id}`)
       .then(console.log("delete successfull") && onClose);
   };
   const handleDeleteInventoryItem = () => {
     axios
-      .delete(`http://localhost:5000/${data.warehouseID}`)
+      .delete(`${SERVER_URL}:${SERVER_PORT}/${data.warehouseID}`)
       .then(console.log("delete successfull") && onClose);
   };
   if (!show) {

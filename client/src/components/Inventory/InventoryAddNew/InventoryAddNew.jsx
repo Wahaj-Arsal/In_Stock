@@ -6,7 +6,10 @@ import error from "../../../assets/icons/error-24px.svg";
 import React, { Component } from "react";
 import axios from "axios";
 
-const API_URL_NEW_INVENTORY = `http://localhost:5000/inventory/add`;
+const SERVER_URL = process.env.REACT_APP_SERVER_URL;
+const SERVER_PORT = process.env.REACT_APP_SERVER_PORT;
+
+const API_URL_NEW_INVENTORY = `${SERVER_URL}:${SERVER_PORT}/inventory/add`;
 
 export default class AddNewInventoryItem extends Component {
   constructor(props) {

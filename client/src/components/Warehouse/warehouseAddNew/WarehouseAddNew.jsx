@@ -7,7 +7,10 @@ import error from "../../../assets/icons/error-24px.svg";
 import React, { Component } from "react";
 import axios from "axios";
 
-const API_URL_NEW_WAREHOUSE = `http://localhost:5000/warehouse/add-new`;
+const SERVER_URL = process.env.REACT_APP_SERVER_URL;
+const SERVER_PORT = process.env.REACT_APP_SERVER_PORT;
+
+const API_URL_NEW_WAREHOUSE = `${SERVER_URL}:${SERVER_PORT}/warehouse/add-new`;
 
 export default class WarehouseAddNew extends Component {
   constructor(props) {

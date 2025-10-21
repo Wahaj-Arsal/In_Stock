@@ -6,9 +6,12 @@ import error from "../../../assets/icons/error-24px.svg";
 import React, { Component } from "react";
 import axios from "axios";
 
+const SERVER_URL = process.env.REACT_APP_SERVER_URL;
+const SERVER_PORT = process.env.REACT_APP_SERVER_PORT;
+
 const API_URL_EDIT_WAREHOUSE = (id) =>
-  `http://localhost:5000/warehouses/${id}/edit`;
-const API_URL_GET_WAREHOUSES = (id) => `http://localhost:5000/${id}`;
+  `${SERVER_URL}:${SERVER_PORT}/warehouses/${id}/edit`;
+const API_URL_GET_WAREHOUSES = (id) => `${SERVER_URL}:${SERVER_PORT}/${id}`;
 
 export default class WarehouseEdit extends Component {
   constructor(props) {
