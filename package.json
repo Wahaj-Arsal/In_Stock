@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "npx nodemon server.js",
-    "build": "npm server.js"
+    "build": "npx nodemon server.js"
   },
   "author": "",
   "license": "ISC",
