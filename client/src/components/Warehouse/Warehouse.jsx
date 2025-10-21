@@ -52,7 +52,7 @@ const Warehouse = (routerProps) => {
       <List
         title="Warehouses"
         itemType="Warehouse"
-        apiUrl={GET_WAREHOUSES_API_URL}
+        apiUrl={SERVER_URL}
         url={url}
         // urlRouter={urlRouter}
       />
